@@ -1,4 +1,4 @@
-package com.dziem.f1_personal_tracker.controller;
+package com.dziem.f1_personal_tracker.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

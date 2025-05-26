@@ -1,6 +1,5 @@
 package com.dziem.f1_personal_tracker.model;
 
-import com.dziem.f1_personal_tracker.controller.Race;
 import jakarta.persistence.*;
 import lombok.Data;
 
