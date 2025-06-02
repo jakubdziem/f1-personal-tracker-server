@@ -1,12 +1,15 @@
 package com.dziem.f1_personal_tracker.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,4 +17,6 @@ public class Driver {
     String name;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     List<Race> raceList;
+    @OneToMany
+    List<Result> resultList;
 }

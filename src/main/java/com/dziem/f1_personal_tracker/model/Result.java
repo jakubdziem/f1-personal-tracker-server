@@ -6,25 +6,21 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.Year;
-import java.util.List;
+import java.time.LocalTime;
 
 @Data
 @Entity
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Race {
+@Builder
+public class Result {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
-    String name;
-    Year year;
-    Integer lapsQuantity;
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    List<Driver> driverList;
-    @OneToMany
-    List<Weather> weatherList;
-    @OneToMany
-    List<Result> resultList;
+    Integer position;
+    LocalTime raceTime;
+    @ManyToOne
+    Driver driver;
+    @ManyToOne
+    Race race;
 }
