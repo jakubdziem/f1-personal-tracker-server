@@ -2,7 +2,6 @@ package com.dziem.f1_personal_tracker.dtos;
 import lombok.Builder;
 import lombok.Data;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -11,9 +10,9 @@ public class WeatherDTO {
     LocalDate time;
     RaceDTO raceDTO;
     Integer rainfall;
-    BigDecimal trackTemperature;
-    BigDecimal airTemperature;
-    BigDecimal windSpeed;
+    Float trackTemperature;
+    Float airTemperature;
+    Float windSpeed;
     Integer lapCount;
     Integer humidity;
 }
