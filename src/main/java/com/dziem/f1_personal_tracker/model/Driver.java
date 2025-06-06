@@ -19,4 +19,6 @@ public class Driver {
     List<Race> raceList;
     @OneToMany
     List<Result> resultList;
+    @OneToMany
+    List<LapTime> lapTimeList;
 }
