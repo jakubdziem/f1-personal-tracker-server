@@ -23,7 +23,7 @@ public class DriverImportController {
     private final LapTimeRepository lapTimeRepository;
 
     @PostMapping("/drivers")
-    public ResponseEntity<String> importDriver(@RequestBody List<DriverImportDTO> dtosList) {
+    public ResponseEntity<String> importDrivers(@RequestBody List<DriverImportDTO> dtosList) {
         for(DriverImportDTO dto : dtosList) {
             List<Race> races = dto.getRaceList().stream()
                     .map(r -> Race.builder().name(r.getName()).year(Year.of(r.getYear())).lapsQuantity(r.getLapsQuantity()).build())
