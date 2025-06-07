@@ -9,7 +9,6 @@ import com.dziem.f1_personal_tracker.repository.WeatherRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.Year;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,18 +24,14 @@ public class TemperatureLapTimeServiceImpl implements TemperatureLapTimeService 
         List<LapTime> lapTimes = lapTimeRepository.findAll().stream()
                 .filter(lapTime -> {
                     Race race = lapTime.getRace();
-                    return race != null &&
-                            race.getYear() != null &&
-                            (race.getYear().equals(Year.of(2023)) || race.getYear().equals(Year.of(2024)));
+                    return race != null;
                 })
                 .toList();
 
         List<Weather> weatherData = weatherRepository.findAll().stream()
                 .filter(w -> {
                     Race race = w.getRace();
-                    return race != null &&
-                            race.getYear() != null &&
-                            (race.getYear().equals(Year.of(2023)) || race.getYear().equals(Year.of(2024)));
+                    return race != null;
                 })
                 .toList();
 
@@ -46,15 +41,12 @@ public class TemperatureLapTimeServiceImpl implements TemperatureLapTimeService 
             Float temp = w.getTrackTemperature();
             if (temp == null) continue;
 
-            System.out.println("Weather race ID: " + w.getRace().getId());
-            System.out.println("Track temperature: " + w.getTrackTemperature());
 
             List<LapTime> relevantLapTimes = lapTimes.stream()
                     .filter(l -> l.getRace() != null && w.getRace() != null &&
                             l.getRace().getId().equals(w.getRace().getId()))
                     .toList();
 
-            System.out.println("LapTimes found for this weather: " + relevantLapTimes.size());
 
             int avgLapTime = relevantLapTimes.stream()
                     .mapToInt(LapTime::getMilliseconds)

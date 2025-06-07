@@ -9,6 +9,12 @@ import java.util.Optional;
 
 public interface RaceRepository extends JpaRepository<Race, Integer> {
     Optional<List<Race>> findRacesByName(String name);
-    @Query("SELECT DISTINCT r FROM Race r LEFT JOIN FETCH r.weatherList")
-    List<Race> findAllWithWeather();
+    @Query("""
+    SELECT DISTINCT r FROM Race r
+    LEFT JOIN FETCH r.weatherList w
+    WHERE r.id IN (
+        SELECT w2.race.id FROM Weather w2 WHERE w2.rainfall > 0
+    )
+""")
+    List<Race> findAllWithRainyWeather();
 }
