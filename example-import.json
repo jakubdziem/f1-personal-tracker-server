@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Maximilian Starke",
+    "raceList": [
+      { "name": "German Grand Prix", "year": 2023, "lapsQuantity": 67 }
+    ],
+    "resultList": [
+      { "position": 3, "raceTime": "01:35:20", "raceName": "German Grand Prix" }
+    ],
+    "lapTimeList": [
+      { "lapNumber": 1, "time": "01:30.500", "raceName": "German Grand Prix" },
+      { "lapNumber": 2, "time": "01:29.700", "raceName": "German Grand Prix" }
+    ]
+  },
+  {
+    "name": "Carlos Fenwick",
+    "raceList": [
+      { "name": "Spanish Grand Prix", "year": 2024, "lapsQuantity": 66 }
+    ],
+    "resultList": [
+      { "position": 5, "raceTime": "01:37:45", "raceName": "Spanish Grand Prix" }
+    ],
+    "lapTimeList": [
+      { "lapNumber": 1, "time": "01:31.200", "raceName": "Spanish Grand Prix" }
+    ]
+  },
+  {
+    "name": "Elena Roussel",
+    "raceList": [
+      { "name": "French Grand Prix", "year": 2023, "lapsQuantity": 53 }
+    ],
+    "resultList": [
+      { "position": 2, "raceTime": "01:34:15", "raceName": "French Grand Prix" }
+    ],
+    "lapTimeList": [
+      { "lapNumber": 1, "time": "01:29.900", "raceName": "French Grand Prix" },
+      { "lapNumber": 2, "time": "01:30.100", "raceName": "French Grand Prix" }
+    ]
+  }
+]
