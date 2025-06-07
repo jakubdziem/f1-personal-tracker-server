@@ -22,7 +22,7 @@ public class DriverImportController {
     private final ResultRepository resultRepository;
     private final LapTimeRepository lapTimeRepository;
 
-    @PostMapping("/driver")
+    @PostMapping("/drivers")
     public ResponseEntity<String> importDriver(@RequestBody List<DriverImportDTO> dtosList) {
         for(DriverImportDTO dto : dtosList) {
             List<Race> races = dto.getRaceList().stream()
