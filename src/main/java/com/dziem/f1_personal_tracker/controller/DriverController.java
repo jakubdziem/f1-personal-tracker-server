@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("/api/v1")
+@RestController
 @AllArgsConstructor
 public class DriverController {
     private final DriverAveragePositionService driverAveragePositionService;
