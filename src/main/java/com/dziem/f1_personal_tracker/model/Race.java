@@ -23,8 +23,8 @@ public class Race {
     Integer lapsQuantity;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     List<Driver> driverList;
-    @OneToMany
+    @OneToMany(mappedBy = "race", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     List<Weather> weatherList;
-    @OneToMany
+    @OneToMany(mappedBy = "race", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     List<Result> resultList;
 }

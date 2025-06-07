@@ -22,5 +22,6 @@ public class Result {
     @ManyToOne
     Driver driver;
     @ManyToOne
+    @JoinColumn(name = "race_id")
     Race race;
 }

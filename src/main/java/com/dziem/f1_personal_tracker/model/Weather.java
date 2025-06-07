@@ -19,6 +19,7 @@ public class Weather {
     Integer id;
     LocalDate time;
     @ManyToOne
+    @JoinColumn(name = "race_id")
     Race race;
     Integer rainfall;
     Float trackTemperature;
