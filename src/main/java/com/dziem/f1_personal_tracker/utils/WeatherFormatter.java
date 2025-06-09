@@ -1,4 +1,4 @@
-package com.dziem.f1_personal_tracker.formatter;
+package com.dziem.f1_personal_tracker.utils;
 
 import com.dziem.f1_personal_tracker.dtos.MeetingApiDTO;
 import com.dziem.f1_personal_tracker.dtos.MeetingWithWeather;
