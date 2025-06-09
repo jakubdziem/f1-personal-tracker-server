@@ -23,7 +23,6 @@ public class DriverExportServiceImpl implements DriverExportService {
             DriverExportDTO dto = new DriverExportDTO();
             dto.setName(driver.getName());
 
-            // Mapowanie wyścigów
             dto.setRaceList(driver.getRaceList().stream().map(race -> {
                 RaceExportDTO r = new RaceExportDTO();
                 r.setName(race.getName());
@@ -32,7 +31,6 @@ public class DriverExportServiceImpl implements DriverExportService {
                 return r;
             }).toList());
 
-            // Mapowanie wyników
             dto.setResultList(resultRepository.findAllByDriver(driver).stream().map(result -> {
                 ResultExportDTO res = new ResultExportDTO();
                 res.setPosition(result.getPosition());
@@ -40,12 +38,11 @@ public class DriverExportServiceImpl implements DriverExportService {
                 if (result.getRace() != null) {
                     res.setRaceName(result.getRace().getName());
                 } else {
-                    res.setRaceName("UNKNOWN"); // Możesz tu dać null lub inny placeholder
+                    res.setRaceName("UNKNOWN");
                 }
                 return res;
             }).toList());
 
-            // Mapowanie czasów okrążeń
             dto.setLapTimeList(lapTimeRepository.findAllByDriver(driver).stream().map(lap -> {
                 LapTimeExportDTO lapDto = new LapTimeExportDTO();
                 lapDto.setLapNumber(lap.getLap());
